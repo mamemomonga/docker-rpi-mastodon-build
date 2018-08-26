@@ -4,7 +4,7 @@
 * Docker
 * /var を btrfsの外付けSSD
 * ./build.sh を実行すればビルド開始
-* DO\_PUSH=1 を頭につけるとPUSHする:w
+* DO\_PUSH=1 を頭につけるとPUSHする
 * postgres:9.6-alpine, redis:4.0-alpine は ARM対応
 
 # Raspberry PiへのDockerインストール
@@ -27,4 +27,9 @@
 * https://github.com/tootsuite/documentation/blob/master/Running-Mastodon/Production-guide.md
 * https://hub.docker.com/_/postgres/
 * https://hub.docker.com/_/redis/
+
+# Docker Composeのビルド
+
+	$ ./docker-compose.sh
+
 
