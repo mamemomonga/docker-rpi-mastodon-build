@@ -25,6 +25,6 @@
 * https://hub.docker.com/r/multiarch/alpine/tags/
 * https://github.com/tootsuite/mastodon
 * https://github.com/tootsuite/documentation/blob/master/Running-Mastodon/Production-guide.md
-* https://hub.docker.com/\_/postgres/
-* https://hub.docker.com/\_/redis/
+* https://hub.docker.com/_/postgres/
+* https://hub.docker.com/_/redis/
 
