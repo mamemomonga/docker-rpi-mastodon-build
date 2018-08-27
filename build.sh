@@ -1,7 +1,14 @@
 #!/bin/bash
 set -eu
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $BASEDIR
 
+if [ -e 'var' ]; then echo "var directory already exists."; exit 1; fi
+
+if [ -z "$( uname -m | perl -nlE 'say if (/^armv(6|7)l$/)' )" ]; then
+	echo "This tool can only be used with armv6l or armv7l."
+	exit 1
+fi
 
 function build_ruby {
 	local tagname="mamemomonga/multiarch-armhf-ruby:2.4.4-alpine3.6"
