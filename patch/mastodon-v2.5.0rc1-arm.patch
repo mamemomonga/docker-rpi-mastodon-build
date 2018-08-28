@@ -1,0 +1,21 @@
+diff --git a/Dockerfile b/Dockerfile
+index b85d05047..e956fd9ca 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -1,5 +1,5 @@
+-FROM node:8.11.3-alpine as node
+-FROM ruby:2.4.4-alpine3.6
++FROM mamemomonga/multiarch-armhf-node:8.11.4-alpine3.6 as node
++FROM mamemomonga/multiarch-armhf-ruby:2.4.4-alpine3.6
+ 
+ LABEL maintainer="https://github.com/tootsuite/mastodon" \
+       description="Your self-hosted, globally interconnected microblogging community"
+@@ -62,6 +62,8 @@ RUN apk -U upgrade \
+  && cd /mastodon \
+  && rm -rf /tmp/* /var/cache/apk/*
+ 
++ENV ARCH=-marm
++
+ COPY Gemfile Gemfile.lock package.json yarn.lock .yarnclean /mastodon/
+ 
+ RUN bundle config build.nokogiri --with-iconv-lib=/usr/local/lib --with-iconv-include=/usr/local/include \

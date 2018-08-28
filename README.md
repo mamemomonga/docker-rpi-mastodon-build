@@ -49,6 +49,15 @@
 
 * https://hub.docker.com/r/mamemomonga/armhf-docker-compose/
 
+## こちらでビルドしたarmhf版をRaspberry Piに入れる
+
+	sudo bash -xe << 'EOS'
+	curl -L --fail https://github.com/docker/compose/releases/download/1.22.0/run.sh | perl -lnpE 's#IMAGE="docker/compose#mamemomonga/armhf-docker-compose#' > /usr/local/bin/docker-compose
+	sudo chmod +x /usr/local/bin/docker-compose
+	EOS
+
+https://docs.docker.com/compose/install/#install-compose
+
 ## 参考URL
 
 * https://github.com/docker/compose
